@@ -48,14 +48,16 @@ Click on "SWITCH TO CLASSIC" link on side navigator bar to switch to classic Edg
  
  
   
-  # Hands on Labs
+# Hands on Labs
 
-1. [API EndPoints - Flows - Conditional Flows](lab1.md)
-2. [Route Rules - Target Servers](lab2.md)             
-3. [Key Value Maps](lab3.md)
-4. [Caching - Populate, Lookup](lab4.md)
-5. [OAuth - Client Credentials](lab5.md)
-6. [OAuth - 3 Legged - Authorization Code](lab3.md) <!!-- TBD: Remove It -->
+1. [API Development : API Proxy Flows](lab1.md)
+2. [API Development : Create a Mashup with APIs (Composite APIs) ](lab2.md)
+3. [API Security : Threat Protection](lab3.md)
+4. [Route Rules - Target Servers](lab2.md)             
+5. [Key Value Maps](lab3.md)
+6. [Caching - Populate, Lookup](lab4.md)
+7. [OAuth - Client Credentials](lab5.md)
+6. [OAuth - 3 Legged - Authorization Code](lab3.md)
 7. [Analytics - Create Custom Reports](lab3.md)
 8. [Automate Deployment - ApigeeTool](lab3.md)
 9. [Management APIs](lab3.md)
