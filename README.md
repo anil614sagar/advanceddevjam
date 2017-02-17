@@ -55,14 +55,8 @@ Click on "SWITCH TO CLASSIC" link on side navigator bar to switch to classic Edg
 3. [Key Value Maps](lab3.md)
 4. [Caching - Populate, Lookup](lab4.md)
 5. [OAuth - Client Credentials](lab5.md)
-6. [OAuth - 3 Legged - Authorization Code](lab3.md)
+6. [OAuth - 3 Legged - Authorization Code](lab3.md) <!!-- TBD: Remove It -->
 7. [Analytics - Create Custom Reports](lab3.md)
 8. [Automate Deployment - ApigeeTool](lab3.md)
 9. [Management APIs](lab3.md)
-
-# Appendix
-
-If you get done with all the standard labs and want to keep going, try out these additional hands-on exercises:
-
-TBD
 
