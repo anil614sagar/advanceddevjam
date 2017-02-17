@@ -35,24 +35,34 @@ Once your account has been created, you need to be added to the Apigee environme
   Once you are successfully in the Apigee Edge UI, make sure you are in the correct Apigee organization. For the session, you should be in demo-au04. 
   
   ![Image](images/devjam-org.png)
+  
+Click on "SWITCH TO CLASSIC" link on side navigator bar to switch to classic Edge UI.
 
-  You are now ready to get started on the labs.
+  ![Image](images/switch-to-classic.png)
+  
+ You should now see Classic Edge UI.
+
+  ![Image](images/classic-dash.png) 
+ 
+ You are now ready to get started on the labs.
+ 
+ 
   
   # Hands on Labs
 
-1. [API Flows - EndPoints - Conditional Flows](lab1.md)
-2. [Route Rules - Target Servers](lab2.md)
+1. [API EndPoints - Flows - Conditional Flows](lab1.md)
+2. [Route Rules - Target Servers](lab2.md)             
 3. [Key Value Maps](lab3.md)
 4. [Caching - Populate, Lookup](lab4.md)
 5. [OAuth - Client Credentials](lab5.md)
 6. [OAuth - 3 Legged - Authorization Code](lab3.md)
 7. [Analytics - Create Custom Reports](lab3.md)
 8. [Automate Deployment - ApigeeTool](lab3.md)
-9. [Simple script based Deployment - Management APIs](lab3.md)
+9. [Management APIs](lab3.md)
 
 # Appendix
 
 If you get done with all the standard labs and want to keep going, try out these additional hands-on exercises:
 
-1. [Invalidate Cache](lab_appendix1.md)
-2. [Caching](lab_appendix2.md)
+TBD
+
