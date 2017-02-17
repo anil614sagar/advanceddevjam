@@ -74,19 +74,19 @@ API Team got a requirement from business team to expose legacy "Employees API" w
 ## Select existing Employees API
 
 
-Step 1. Click on the Develop tab, Let's Use an Assign Message Policy to prepare the service callout request to google maps API.
+**Step 1**. Click on the Develop tab, Let's Use an Assign Message Policy to prepare the service callout request to google maps API.
 
 ![](./images/employee-click-develop.png)
 
-Step 2. Click on + Step on Proxy Endpoint PreFlow Request.
+**Step 2**. Click on + Step on Proxy Endpoint PreFlow Request.
 
 ![](./images/mashup-add-verify.png)
 
-Step 3. Scroll down the policy list and select Assign Message and update the default display name to Create Geocoding Request. Then click on Add button.
+**Step 3**. Scroll down the policy list and select Assign Message and update the default display name to Create Geocoding Request. Then click on Add button.
 
 ![](./images/add-assign-message.png)
 
-Step 4. Modify the policy to reflect a request with the appropriate query parameters for the Google Geolocation API.
+**Step 4**. Modify the policy to reflect a request with the appropriate query parameters for the Google Geolocation API.
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -128,13 +128,13 @@ Here's a brief description of the elements in this policy. You can read more abo
 
 Note: The properties associated with the ‘Assign Message’ policy could have been modified using the ‘Property Inspector’ panel that’s presented in the ‘Develop’ tab on the right. Any changes made in the ‘Code’ panel are reflected in the ‘Property Inspector’ panel and vice-versa. We will use the ‘Property Inspector’ panel to set properties for some of the policies as the lesson progresses.
 
-Step 5. Save the API Proxy.
+**Step 5**. Save the API Proxy.
 
-Step 6. Use Service Callout Policy to invoke the Google GeoCoding API, Click on + Step on Proxy Endpoint Preflow Request,
+**Step 6**. Use Service Callout Policy to invoke the Google GeoCoding API, Click on + Step on Proxy Endpoint Preflow Request,
 
 ![](./images/mashup-add-verify.png)
 
-Step 7. Scroll down the policy list and select Service Callout and update the default display name to Call Geocoding API, select HTTP and then enter the HTTP Target with the following.
+**Step 7**. Scroll down the policy list and select Service Callout and update the default display name to Call Geocoding API, select HTTP and then enter the HTTP Target with the following.
 
 
 URL:  http://maps.googleapis.com/maps/api/geocode/json
@@ -144,7 +144,7 @@ URL:  http://maps.googleapis.com/maps/api/geocode/json
 Then click on Add button.
 
 
-Step 8. Update the Request variable from myRequest to GeoCodingRequest and also update the Response variable from calloutResponse to GeoCodingResponse.
+**Step 8**. Update the Request variable from myRequest to GeoCodingRequest and also update the Response variable from calloutResponse to GeoCodingResponse.
 
 
 ```
@@ -169,10 +169,10 @@ Step 8. Update the Request variable from myRequest to GeoCodingRequest and also 
 
 \<HTTPTargetConnection\>\<URL\> - Specifies the target URL to be used by the service callout - in this case the URL of the Google Geocoding API: http://maps.googleapis.com/maps/api/geocode/json 
 
-Step 9. Save the API Proxy.
+**Step 9**. Save the API Proxy.
 
 
-Step 10. Use Extract Message Policy to parse the service callout response, Click on + Step in Proxy PreFlow request path,
+**Step 10**. Use Extract Message Policy to parse the service callout response, Click on + Step in Proxy PreFlow request path,
 
 ![](./images/mashup-add-verify.png)
 
@@ -184,7 +184,7 @@ Then click on Add.
 ![](./images/mashup-image10.png)
 
 
-Step 11. Update the policy to parse the GeoCodingResponse and store the results in variables.
+**Step 11**. Update the policy to parse the GeoCodingResponse and store the results in variables.
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -211,10 +211,10 @@ Here's a brief description of the elements that were modified in this policy. Yo
 It may not be obvious, but it's important to see that ExtractVariables produces two variables whose names consist of the variable prefix (geocodeResponse) and the actual variable names that are specified in the policy. These variables are stored in the API proxy and will be available to other policies within the proxy flow, as you will see. The variables are: geocodeResponse.latitude & geocodeResponse.longitude
 
 
-Step 12. Save the API Proxy.
+**Step 12**. Save the API Proxy.
 
 
-Step 13. Use the Javascript Policy to create the Location Query to send to the BaaS target endpoint. Click on + Step,
+**Step 13**. Use the Javascript Policy to create the Location Query to send to the BaaS target endpoint. Click on + Step,
 
 
 ![](./images/mashup-add-verify.png)
@@ -224,7 +224,7 @@ Scroll down the policy list and select Javascript and update the default display
 
 ![](./images/mashup-image12.png)
 
-Step 14. Select the newly created script file and add the following code:
+**Step 14**. Select the newly created script file and add the following code:
 
 
 ```
@@ -249,7 +249,7 @@ You can read more about this policy in Javascript policy.
 
 Save the API proxy.
 
-Step 15. Use the Assign Message Policy to add the Location Query to the query parameter before BaaS target endpoint invocation. Click on + Step
+**Step 15**. Use the Assign Message Policy to add the Location Query to the query parameter before BaaS target endpoint invocation. Click on + Step
 
 ![](./images/mashup-add-verify.png)
 
@@ -283,7 +283,7 @@ Here's a brief description of the elements that were modified in this policy. Yo
 - Adds a new query parameter (‘ql’) with the variable ‘baasQL’ providing the actual value. Note that the ‘baasQL’ variable was set by the previous Javascript policy as part of the ‘context’ object
 
 
-Step 16. Testing the API Proxy with the location query after deploying changes
+**Step 16**. Testing the API Proxy with the location query after deploying changes
 
 
 - Click on the Save button to save and deploy the changes to the API Proxy.
@@ -333,8 +333,10 @@ Common themes and use cases, are best handled with standard implementations and 
 
 Useful Apigee documentation links on API Mashups 
 
+- http://docs.apigee.com/api-services/reference/service-callout-policy
+
 ## Rate this lab
 
-How did you like this lab? Rate here.
+TBD
 
 
