@@ -18,7 +18,7 @@ As you have seen in DevJam Prerequisites labs, You can attach policies to either
 
 API proxies define request and response flows that are executed in a specific order. The order allows you to apply logic and behavior at specific points in the API proxy execution. The request and response flows are subdivided into proxy and target endpoints (We will learn more about proxy & target endpoints in next lab). Each segment is subdivided into the following flow 'stages':
 
-- **PreFlow**: Always executes before any conditional flows.http://d3grn7b5c5cnw5.cloudfront.net/sites/docs/files/ProxyToBackendWithFlows_v3.png
+- **PreFlow**: Always executes before any conditional flows.
 - **Conditional flows**: One or more flows, each of which has an associated condition. Conditional flows tell Edge, "When you see this, perform this logic." For example, when an API call is a GET on the /movies resource (the condition), transform the response to JSON (through a policy attached to the conditional flow). Only one flow executes per transaction—the first flow whose condition evaluates to true.
 
 	In a conditional flow, the condition is evaluated in both the request and response. You cannot have separate conditions for request and response.
