@@ -19,12 +19,6 @@ In this lab, you will create a custom report to provide insight into the consump
 
 * Traffic to API Proxy
 
-
-## Pre-requisites
-  - Apigee Edge Account
-  - Proxy downloaded in Lab 1: API Development : API Proxy Flows
-
-
 ## Instructions
 
 ### Navigate to the Analytics section of Edge
