@@ -1,201 +1,156 @@
-# API Security : Threat Protection
+#API Security : Threat Protection
 
-Duration : 30 mins
-
-
+*Duration : 20 mins - Persona : API Team/Security*
 ## Use case
 
-You have a set of APIs that are either consumed by partners or open to public. You want to keep those APIs secure by protecting the backend from SQL Injection and XML threats. 
+You have a set of APIs that are either consumed by partners or open to public. You want to keep those APIs secure by protecting the backend from SQL Injection and XML threats.
 
 ## How can Apigee Edge help?
 
 Policies like XML/JSON threat protection and Regular Expression protection in Apigee Edge, help you easily protect your backend and minimize attacks on your API against these threats by addressing the vulnerabilities.
 
-For example, the JSON Threat Protection policy minimizes the risk posed by content-level attacks by enabling you to specify limits on various JSON structures, such as arrays and strings.
+For example, the XML Threat Protection policy screens against XML threats by validating messages against an XML schema (.xsd), evaluating message content for specific blacklisted keywords or patterns and detecting corrupt or malformed messages before those messages are parsed. And, the JSON Threat Protection policy minimizes the risk posed by content-level attacks by enabling you to specify limits on various JSON structures, such as arrays and strings.
 
 ## Pre-requisites
-  - Apigee Edge Account
-  - Proxy downloaded in Lab 1: API Development : API Proxy Flows
 
-  
-### Let's prepare the proxy for the lab :
+You have an API proxy created in Apigee Edge. If not, jump back to "Creating an API proxy" lab.
 
- - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
-
- 
-![](./images/upload-revision.png)
-
-Upload the bundle,
-
-![](./images/upload-bundle.png)
-
- - Deploy to test environment
-
- ![](./images/deploy-to-test.png)
-
-### Success Criteria :
-  
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
-
-  
 ## Instructions
 
-**Step 1**. Access "{your_initials}_customers_proxy_v2" API Proxy that you have created above. 
+* Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
 
-Click on APIs -> API Proxies in top navigation menu, Click on "{your_initials}_customers_proxy_v2" API Proxy.
+* Select **Develop → API Proxies** in the side navigation menu
 
-**Step 2** . Click on Develop tab to access proxy development screen.
+	![image alt text](images/lab-3/image_0.png)
 
-  ![Image](images/threat-develop-click.png)
-  
-**Step 3** : Click on + icon next to Proxy EndPoints -> Defaults to add a conditonal flow to proxy endpoint.
+* From the list of proxies, Select the api proxy that you want to protect.
 
-  ![Image](images/add-conditional-flow.png)  
-  
-  
-**Step 4** : Add a conditional flow to match create customer API call.
+	![image alt text](images/lab-3/image_1.png)
 
-Tip: See image below
+* Click on the **Develop** tab. Select **PreFlow** from the sidebar under **Proxy Endpoints** section
 
-  ![Image](images/threat-image2.png)    
-  
-**Step 5** : Save API call  
+	![image alt text](images/lab-3/image_2.png)
 
-**Step 6** : Let's make an API Call to "create customer" REST endpoint to see the API in action. Navigate to https://apigee-rest-client.appspot-preview.com/ , Make a post call to create customer.
+* First, let’s protect your backend from XML threats by enforcing certain limits on the XML structure of the payload.
 
-Tip: Get the proxy endpoint from Overview tab in API proxy. It should be **https://{ORNAME}-test.apigee.net/v2{your_initials}-customers**
+* In the Request flow, click the **Add Step** button and from the **Security** section, add the policy named **XML Threat Protection**
 
-  ![Image](images/create-customer-example.png)  
-  
-  
-**Step 7** : Let's create one more customer with additional metadata & try to flood the system with a large payload. Update the body with below payload & make an API call.
+	![image alt text](images/lab-3/image_3.png)
 
-```
-{ 
-   "name": "Payload Threat Bot 1",
-   "First Name": "Attacker",
-   "Last Name": "Attacker Again",
-  "Alias Name1" : "Attacker Again",
-   "First Name2": "Attacker",
-   "Last Name2": "Attacker Again",
-  "Alias Name2" : "Attacker Again",
-   "First Name3": "Attacker",
-   "Last Name3": "Attacker Again",
-  "Alias Name3" : "Attacker Again",
-   "First Name4": "Attacker",
-   "Last Name4": "Attacker Again",
-  "Alias Name4" : "Attacker Again",
-}
-```
+* Click on the Policy in PreFlow and clear the boilerplate code and paste the code below in the code editor
 
-  ![Image](images/payload-attack.png)  
+	```
+	<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+	<XMLThreatProtection async="false" continueOnError="false" enabled="true" name="XML-Threat-Protection-1">
+	    <DisplayName>XML Threat Protection-1</DisplayName>
+	    <Source>request</Source>
+	    <StructureLimits>
+	        <NodeDepth>3</NodeDepth>
+	       <AttributeCountPerElement>2</AttributeCountPerElement>
+	        <NamespaceCountPerElement>3</NamespaceCountPerElement>
+	    </StructureLimits>
+	</XMLThreatProtection>
+	```
 
-As you can see, Our target API accepts the larger JSON payloads as it is which can flood the system / network that might bring down the target server / slow down same by introducing latencies.
+	![image alt text](images/lab-3/image_4.png)
 
-Let's secure our API against payload threats using 'JSON Threat Protection Policy.'
+* Now, let’s protect your backend from SQL Injection threats. For this, you’ll be using the **Regular Expression Protection** policy
 
-**Step 8**: 
+* In the Request flow, click the **Add Step** button and from the **Security** section, add the policy named **Regular Expression Protection**
 
-Let's secure our API against payload threats using 'JSON Threat Protection Policy'. We are going to allow only 5 elements in the JSON payload & protect backend service.
-
-Go to Develop tab in API Proxy, Select 'Create Customer' conditional flow, Click on +Step on request flow to add threat protection policy. 
-
-  ![Image](images/threat-add-step.png) 
-  
-  ![Image](images/threat-add-p.png) 
-  
-
-**Step 9**:
-
-  
-Change the ObjectEntryCount to 5 that will allow max 5 elements in the payload & save the API Proxy.
-
-  ![Image](images/threat-p-protected.png) 
-
-**Step 10** :
-
-Let's verify the API against payload attacks, Navigate to https://apigee-rest-client.appspot-preview.com/ , Add header 'Content-Type' : 'application/json'
-
-  ![Image](images/threat-add-headers.png) 
-
-Update the payload & make the API call,
-
-  ![Image](images/threat-demo.png) 
+	![image alt text](images/lab-3/image_5.png)
 
 
-**Step 11** :
+* Click on the Policy in PreFlow and clear the boilerplate code and paste the code below in the code editor
 
-Let's make a call with payload size less than or equal to 5 & see the success response.
+	```
+	<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+	<RegularExpressionProtection async="false" continueOnError="false" enabled="true" name="Regular-Expression-Protection-1">
+	    <DisplayName>Regular Expression Protection-1</DisplayName>
+	<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+	    <Variable name="request.uri">    <Pattern>[\s]*((delete)|(exec)|(drop\s*table)|(insert)|(shutdown)|(update)|(or))</Pattern>
+	    </Variable>
+	</RegularExpressionProtection>
+	```
 
-  ![Image](images/threat-success.png) 
+	![image alt text](images/lab-3/image_6.png)
 
-Congratualations ! We have successfully implemented threat protection against payload related attacks & delivered the solution to the bussiness team. Let's quickly protect our API from SQL injections attacks in the request URI.
+* **Save** the proxy and deploy it on the **test** environment	![image alt text](images/lab-3/image_7.png)
 
+* *Congratulations!*...Your API is now protected from SQL Injection Attacks.
 
+* Firstly, let’s test XML threat protection using the REST Client ([https://apigee-rest-client.appspot-preview.com/](https://apigee-rest-client.appspot-preview.com/)). Open the REST Client on a new browser window.  
 
+* Copy the URL for your API proxy.
 
-**Step 12** : Now, let’s protect your backend from SQL Injection threats. For this, we will be using the Regular Expression Protection policy.	
+	![image alt text](images/lab-3/image_8.png)
 
-In the Create Custoemr Request flow, click the Add Step button and from the Security section, add the policy named Regular Expression Protection.
+* Paste the URL, Select **POST **from the dropdown and then add **content-type **header with the value **application/xml**
 
-  ![Image](images/threat-regex-add.png) 
+	![image alt text](images/lab-3/image_9.png)
 
-Select the policy, Click Add.  
-  
-  ![Image](images/thread-regex-add.png) 
+* Select the **body** tab and then paste the following body content and click the **Send** button
 
-	
-**Step 13** : Click on the Policy in PreFlow and clear the boilerplate code and paste the code below in the code editor
+	```
+	<book category="WEB">
+	   <title>Learning XML</title>
+	   <author>Erik T. Ray</author>
+	   <year>2003</year>
+	   <sub>clear-type</sub>
+	</book>
+	```
 
-```	
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RegularExpressionProtection async="false" continueOnError="false" enabled="true" name="Regular-Expression-Protection-1">
-    <DisplayName>Regular Expression Protection-1</DisplayName>
-<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-    <Variable name="request.uri">    <Pattern>[\s]*((delete)|(exec)|(drop\s*table)|(insert)|(shutdown)|(update)|(or))</Pattern>
-    </Variable>
-</RegularExpressionProtection>
-```
+	![image alt text](images/lab-3/image_10.png)
 
-![Image](images/threat-regex-proxy-code.png) 
+* You should see a response like this
 
-- Notice elemenet \<Variable name="request.uri"\> where URI is protected against SQL injection attacks
+	![image alt text](images/lab-3/image_11.png)
 
+	*Note*: The above response shows that the children count exceeded 3 because, the provided XML body had 4 children for the root node whereas we had set a restriction in the policy to 3 - <NodeDepth>3</NodeDepth>
 
-Save the proxy and make sure it's deployed to test environment.
+* Now, let’s test SQL Injection protection. Clear the body and remove the header that we had used for the previous call.
 
-**Step 14** :
+* Add a query param to your URL with a SQL command like this ?query=delete * from table and hit send.
 
-Add a query param to your URL with a SQL command like this ?query=delete * from table and hit send.
+* You should see a response like this
 
- Navigate to https://apigee-rest-client.appspot-preview.com/ , Add header 'Content-Type' : 'application/json'
+	![image alt text](images/lab-3/image_12.png)
 
-  ![Image](images/threat-add-headers.png) 
+## Lab Video
 
-Update the queryparam ?query=delete * from table & make the API call,
+If you are lazy and don’t want to implement this use case, it’s OK. You can watch this short video to see how to protect your apis from threats [https://www.youtube.com/watch?v=B4vk7wuZBsk](https://www.youtube.com/watch?v=B4vk7wuZBsk)
 
-  ![Image](images/regex-success.png)
+## Earn Extra-points
 
-Congratualations ! We have successfully implemented threat protection against SQL related attacks & delivered the solution to the bussiness team.
+Now that you know how to protect your APIs from XML threats and SQL Injection threats, try to protect it for a JSON Payload.
 
+## Quiz
 
-##Earn Extra-points
+1. How do you protect your backend from Cross Site Tracing (XST) attacks?
 
-Now that you know how to protect your APIs from JSON threats and SQL Injection threats, try to protect the API from other JSON threats by going through the JSON threat protection policy various attributes.
+2. Can you use JSON Threat protection policy to detect empty payloads? If yes, how? If no, why?
 
-- Restrict the maximum number of elements allowed in an JSON payload array as 4.
-- Restrict the maximum allowed containment depth as 2, where the containers are objects or arrays. For example, an array containing an object which contains an object would result in a containment depth of 3.
-- Restrict the maximum string length allowed for a property name within an object as 40.
-- Restrict the maximum length allowed for a string value as 200.
+3. Which policy would you use to protect your backend from SQL Injection threats?
 
+## Summary
 
-##Quiz
-- How do you protect your backend from Cross Site Tracing (XST) attacks? 
-- Can you use JSON Threat protection policy to detect empty payloads? If yes, how? If no, why?
-- Which policy would you use to protect your backend from SQL Injection threats?
+In this lab you learned how to protect your backend from SQL Injection and XML threats by using various policies like Regular Expression protection and XML threat protection in Apigee Edge.
 
-##Summary
-In this lab you learned how to protect your backend from SQL Injection and JSON threats by using various policies like Regular Expression protection and JSON threat protection in Apigee Edge.
+## References
 
+* Link to Apigee docs page
 
+    * XML Threat Protection Policy [http://docs.apigee.com/api-services/reference/xml-threat-protection-policy](http://docs.apigee.com/api-services/reference/xml-threat-protection-policy)
 
+    * JSON Threat Protection Policy [http://docs.apigee.com/api-services/reference/json-threat-protection-policy](http://docs.apigee.com/api-services/reference/json-threat-protection-policy)
+
+    * Regular Expression Protection Policy
+[http://docs.apigee.com/api-services/reference/regular-expression-protection](http://docs.apigee.com/api-services/reference/regular-expression-protection)
+
+* Take a look at this community [article](https://community.apigee.com/articles/19487/api-vulnerabilites-and-their-mitigation-in-apigee.html) which explains various vulnerabilities and how they can be addressed using Apigee Edge.
+
+* Watch this 4minute [video](https://www.youtube.com/watch?v=rC8kZJgwBFM) to learn about the SQL Injection Threat Protection.
+
+## Rate this lab
+
+How did you link this lab? Rate [here](https://drive.google.com/open?id=1kLZnmuq1CuQ6OmuaKXfOXwBobmzt0LWO_aEo0yAc0BE).
