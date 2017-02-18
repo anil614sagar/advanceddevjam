@@ -84,7 +84,7 @@ Add a conditional flow that get's executed when proxy path suffix matches '/{cus
 
 **Step 1**: Click on proxy you have created earlier, Click on Develop tab.
 
-  ![Image](images/api-develop-click.png)
+  ![Image](images/threat-develop-click.png)
   
 **Step 2** : Click on + icon next to Proxy EndPoints -> Defaults to add a conditonal flow to proxy endpoint.
 
@@ -92,7 +92,7 @@ Add a conditional flow that get's executed when proxy path suffix matches '/{cus
   
 **Step 3** : Add conditional flow by providing matching conditions for our requirement & click add. 
 
-Clue: See image below
+Tip: See image below
 
   ![Image](images/add-conditional-flow-details.png)  
 
