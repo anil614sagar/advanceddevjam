@@ -54,26 +54,26 @@ Part 1 - Response Cache Policy
 
 * Select **APIs** → **API Proxies** in the top navigation menu
 
-![image alt text](image_0.png)
+![image alt text](images/lab-4/image_0.png)
 
 * Select the **{your_initials}_employee_api_proxy** that you created in an earlier lab exercise.
 
-![image alt text](image_1.png)
+![image alt text](images/lab-4/image_1.png)
 
 
 * Click on the **Develop** tab to access the API Proxy development dashboard.
 
-![image alt text](image_2.png)
+![image alt text](images/lab-4/image_2.png)
 
 * Click on **Pre Flow** under Proxy Endpoints, then click **+ Step** on the Request flow to attach a *Response Cache* policy.
 
 
 
-![image alt text](image_3.png)
+![image alt text](images/lab-4/image_3.png)
 
 * Select **Response Cache**, rename to something descriptive like "Cache for Employees" and click on the **Add** button to add the Response Cache policy.
 
-![image alt text](image_4.png)
+![image alt text](images/lab-4/image_4.png)
 
 
 
@@ -111,7 +111,7 @@ Part 1 - Response Cache Policy
 
 * Click Target Endpoints → default → PostFlow.  Verify your cache policy appears here, as well -- on the Response side.  Then, save your proxy and wait for it to successfully deploy.
 
-	![image alt text](image_5.png)
+	![image alt text](images/lab-4/image_5.png)
 
 
 
@@ -124,12 +124,12 @@ Part 1 - Response Cache Policy
 * Note the difference between your first request and subsequent requests made within 60 seconds of the first (remember, this is the lifetime defined for your cache).  A few things should jump out at you:
 
     * Response times reduced with cache.
-    
+
     * Trace graph shows a response generated in the gateway, from cache  eliminating the need to forward these requests to the target backend.
 
-![image alt text](image_6.png)
+![image alt text](images/lab-4/image_6.png)
 
-  
+
 
 * Well done!  You’ve added a general purpose cache which will survive for 60 seconds, before repopulating on the next request made after that window.  Responses generated from cache spare your backend from serving those requests -- and are returned to clients far quicker than would non-cached responses.
 
@@ -141,13 +141,13 @@ You’ve improved the performance of your API with some clever caching of employ
 
 * Change the expiry time on your Response Cache policy to 1s.  This will allow us to make multiple requests for Part II of the lab without triggering a cached response from our Part I work.
 
-	![image alt text](image_7.png)
+	![image alt text](images/lab-4/image_7.png)
 
 * Click Proxy Endpoints → default → Get an Employee with given UUID.
 
 * Click **+Step** on the **Request** side
 
-	![image alt text](image_8.png)
+	![image alt text](images/lab-4/image_8.png)
 
 * Add a **Populate Cache** policy, changing the name to Populate ID
 
@@ -229,11 +229,11 @@ If you prefer to learn by watching, here is a video lab on using Cache policies
 
 Use the EdgeUI to examine the cache resources available in the Environment.
 
-![image alt text](image_9.png)
+![image alt text](images/lab-4/image_9.png)
 
 You should see something like this, Select the **test** environment:
 
-![image alt text](image_10.png)
+![image alt text](images/lab-4/image_10.png)
 
 Create a named cache resource with your initials. Then, return to your Proxy, and modify the ResponseCache policy to explicitly use that named cache resource. hint: see [the documentation for the ResponseCache policy](http://apigee.com/docs/api-services/reference/response-cache-policy). It might have something to do with adding an element like this to the configuration:
 
