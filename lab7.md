@@ -23,7 +23,7 @@ Most typically, the client_credentials grant type is used when the app is also t
 
 * Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
 
-* Select **APIs**** → API Proxies** in the top navigation menu
+* Select **APIs** → **API Proxies** in the top navigation menu
 
 	![image alt text](images/lab-7/image_0.png)
 
