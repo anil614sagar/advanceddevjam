@@ -19,6 +19,31 @@ In this lab, you will create a custom report to provide insight into the consump
 
 * Traffic to API Proxy
 
+
+## Pre-requisites
+  - Apigee Edge Account
+  - Proxy downloaded in Lab 1: API Development : API Proxy Flows
+
+  
+### Let's prepare the proxy for the lab :
+
+ - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
+ 
+![](./images/upload-revision.png)
+
+Upload the bundle,
+
+![](./images/upload-bundle.png)
+
+ - Deploy to test environment
+
+ ![](./images/deploy-to-test.png)
+
+### Success Criteria :
+  
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
+
+
 ## Instructions
 
 ### Navigate to the Analytics section of Edge

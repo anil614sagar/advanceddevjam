@@ -17,6 +17,27 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 * You have the following created on Apigee Edge - an API Product, a Developer and an App. If not, jump back to "API Publishing - Packaging APIs" lab.
 
+  
+### Let's prepare the proxy for the lab :
+
+ - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
+
+ 
+![](./images/upload-revision.png)
+
+Upload the bundle,
+
+![](./images/upload-bundle.png)
+
+ - Deploy to test environment
+
+ ![](./images/deploy-to-test.png)
+
+### Success Criteria :
+  
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
+
+
 ## Instructions
 
 * Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.

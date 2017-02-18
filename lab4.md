@@ -42,9 +42,31 @@ Here’s a breakdown of the Apigee Edge caching policies:
 
 In this lab, we will configure your proxy to cache the results of a request for 60 seconds at a time.  Once we’ve seen how this affects runtime performance, we’ll leverage the cache a different way -- explicitly defining the cache key and contents.  We’ll populate this cache with an employee ID and demonstrate how to retrieve this value from cache with a LookupCache policy.
 
-## Pre-requisites
 
-You have an API proxy created in Apigee Edge. If not, jump back to the "Create Reverse Proxy with OpenAPI specification" lab.
+## Pre-requisites
+  - Apigee Edge Account
+  - Proxy downloaded in Lab 1: API Development : API Proxy Flows
+
+  
+### Let's prepare the proxy for the lab :
+
+ - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
+
+ 
+![](./images/upload-revision.png)
+
+Upload the bundle,
+
+![](./images/upload-bundle.png)
+
+ - Deploy to test environment
+
+ ![](./images/deploy-to-test.png)
+
+### Success Criteria :
+  
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
+
 
 ## Instructions
 
@@ -56,7 +78,7 @@ Part 1 - Response Cache Policy
 
 ![image alt text](images/lab-4/image_0.png)
 
-* Select the **{your_initials}_employee_api_proxy** that you created in an earlier lab exercise.
+* Select the **{your_initials}_employees** that you created in an earlier lab exercise.
 
 ![image alt text](images/lab-4/image_1.png)
 

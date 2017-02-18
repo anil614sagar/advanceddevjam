@@ -45,24 +45,31 @@ In this lab we will see how you can extend an existing API by aggregating it wit
 
 ## Pre-requisites
   - Apigee Edge Account
+  - API Proxy you have downloaded in lab 1
 
 ## Instructions
   
 API Team got a requirement from business team to expose legacy "Employees API" with a new rest design & additional features like zipcode based querying.
   
-### Given Information :
   
-  Backend URL : http://apigeedemovideos-test.apigee.net/employees-api
-  
-### Action Items :
+### Let's prepare the proxy for the lab :
 
- - Create a reverse pass through proxy with a name **{your_initials}\_employees\_proxy\_v1**
- - Base Path should be **/v1/{your_initials}-employees**
+ - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
+
+ 
+![](./images/upload-revision.png)
+
+Upload the bundle,
+
+![](./images/upload-bundle.png)
+
  - Deploy to test environment
+
+ ![](./images/deploy-to-test.png)
 
 ### Success Criteria :
   
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of customers.
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
 
 ### Let's do it ! 
 

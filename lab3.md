@@ -15,34 +15,28 @@ For example, the JSON Threat Protection policy minimizes the risk posed by conte
 
 ## Pre-requisites
   - Apigee Edge Account
-  - Proxy created in Lab 1: API Development : API Proxy Flows
+  - Proxy downloaded in Lab 1: API Development : API Proxy Flows
 
   
-## Business Requirements
-  
-API Team got a requirement from business team to expose legacy "Customers API" create customer REST API with a new security mechanism that will protect the server from payload related attacks & SQL Injections.
+### Let's prepare the proxy for the lab :
 
-### Given Information :
-  
-  Backend URL : https://apibaas-trial.apigee.net/asagar/macquarie-demo01/customers
+ - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
 
-  
-### Action Items :
+ 
+![](./images/upload-revision.png)
 
- - Create a reverse pass through proxy with a name **{your_initials}\_customers\_proxy\_v2**
- - Base Path should be **/v2/{your_initials}-customers**
+Upload the bundle,
+
+![](./images/upload-bundle.png)
+
  - Deploy to test environment
+
+ ![](./images/deploy-to-test.png)
 
 ### Success Criteria :
   
-  - API Call to **https://{ORNAME}-test.apigee.net/v2{your_initials}-customers** should return list of customers.
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
 
-## Let's do it ! 
-
-- Create a proxy in Apigee Edge UI. Navigate to APIs -> API Proxies
-- Click on Create New Proxy button on top right sidebar.
-- Use above information & experience you have gained from Apigee Edge DevJam Prerequisites labs that you have done prior to this DevJam.
-- Have a question / questions ? Apigee Team is happy to help you. Please ask for help.
   
 ## Instructions
 
