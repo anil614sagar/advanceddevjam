@@ -62,7 +62,7 @@ Upload the bundle,
 
 * In the Metrics sections, choose the metric that you wish to analyze. Select **Traffic** as the metric. See [Custom Metrics ](https://docs.google.com/document/d/1T33fq5q5D6z7nmxI7gcKtcIcNvOxbuIv_BO8DWWthis/edit#heading=h.ksg236njnyhd)for a description of each metric.![image alt text](images/lab-5/image_4.png)
 
-* Select an **Aggregate Function** that you want applied to the data for the first metric. You can select an aggregation function to display the **Sum**, **Average**, **Min**, or **Max** values. Select **Sum** as the Aggregate Function.
+* Select an **Aggregate Function** that you want to be applied to the data for the first metric. You can select an aggregation function to display the **Sum**, **Average**, **Min**, or **Max** values. Select **Sum** as the Aggregate Function.
 
 * (Optional) Click **+ Metric** to add additional metrics. Select **Total Response Time** as the metric and **Average **as the Aggregate Function.![image alt text](images/lab-5/image_5.png)
 
@@ -90,9 +90,9 @@ If no data is returned, verify that the timeframe of the **Custom Report** match
 
 ![image alt text](images/lab-5/image_11.png)Also, verify that the appropriate **Environment** has been selected on the top right dropdown.![image alt text](images/lab-5/image_12.png)
 
-### Drilldown dimensions
+### Drill down dimensions
 
-You can select from a large number of custom drilldown dimensions. Drilldown dimensions let you specify which dimensions to measure in your custom report. Apigee Edge Analytics collects data on a wide range of dimensions. And, you can also select any custom dimensions that have been created in your organization. See [Analytics reference](http://docs.apigee.com/analytics-services/reference/analytics-reference).
+You can select from a large number of custom drilldown dimensions. Drill down dimensions let you specify which dimensions to measure in your custom report. Apigee Edge Analytics collects data on a wide range of dimensions. And, you can also select any custom dimensions that have been created in your organization. See [Analytics reference](http://docs.apigee.com/analytics-services/reference/analytics-reference).
 
 To drill down into the custom report you just created, click on the name of your **Proxy** under the **Summary** on the bottom of the report.
 

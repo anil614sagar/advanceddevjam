@@ -128,7 +128,7 @@ Upload the bundle,
 
 	or, refer this [link](https://www.base64encode.org/) to generate the value
 
-* Now, let’s test the deployment using the REST Client ([http://api-rest-client.appspot-preview.com/](http://api-rest-client.appspot-preview.com/)). Open the REST Client on a new browser window.  
+* Now, let’s test the deployment using the REST Client ([https://apigee-rest-client.appspot.com/](https://apigee-rest-client.appspot.com/)). Open the REST Client in a new browser window.  
 
 * Copy the URL for oauth API proxy.
 
@@ -158,7 +158,7 @@ Upload the bundle,
 
 	![image alt text](images/lab-7/image_14.png)
 
-* And, if you remove the Authrorization header and hit send, you will see a 401 Unauthorized status.
+* And, if you remove the Authorization header and hit send, you will see a 401 Unauthorized status.
 
 	![image alt text](images/lab-7/image_15.png)
 
