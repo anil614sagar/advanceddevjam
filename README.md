@@ -54,7 +54,7 @@ Click on "SWITCH TO CLASSIC" link on side navigator bar to switch to classic Edg
 2. [API Development : Create a Mashup with APIs (Composite APIs) ](lab2.md)
 3. [API Security : Threat Protection](lab3.md)
 4. [API Performance: Caching - Populate, Lookup](lab4.md)
-5. [Analytics - Create Custom Reports](lab9.md)
+5. [Analytics - Create Custom Reports](lab5.md)
 6. [OAuth - Client Credentials](lab7.md)
 7. [OAuth - 3 Legged - Authorization Code](lab8.md)
 
