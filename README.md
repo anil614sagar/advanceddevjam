@@ -53,8 +53,8 @@ Click on "SWITCH TO CLASSIC" link on side navigator bar to switch to classic Edg
 1. [API Development : API Proxy Flows](lab1.md)
 2. [API Development : Create a Mashup with APIs (Composite APIs) ](lab2.md)
 3. [API Security : Threat Protection](lab3.md)
-4. [OAuth - Client Credentials](lab5.md)
-5. [OAuth - 3 Legged - Authorization Code](lab3.md)
-6. [API Performance: Caching - Populate, Lookup](lab4.md)
-7. [Analytics - Create Custom Reports](lab3.md)
+4. [API Performance: Caching - Populate, Lookup](lab4.md)
+5. [Analytics - Create Custom Reports](lab3.md)
+6. [OAuth - Client Credentials](lab5.md)
+7. [OAuth - 3 Legged - Authorization Code](lab3.md)
 
