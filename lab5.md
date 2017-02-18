@@ -24,11 +24,11 @@ In this lab, you will create a custom report to provide insight into the consump
   - Apigee Edge Account
   - Proxy downloaded in Lab 1: API Development : API Proxy Flows
 
-  
+
 ### Let's prepare the proxy for the lab :
 
  - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
- 
+
 ![](./images/upload-revision.png)
 
 Upload the bundle,
@@ -40,7 +40,7 @@ Upload the bundle,
  ![](./images/deploy-to-test.png)
 
 ### Success Criteria :
-  
+
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
 
 
@@ -50,29 +50,29 @@ Upload the bundle,
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
 
-2. Select **Analytics** → **Reports** from the top navigation menu.![image alt text](images/lab-9/image_0.png)
+2. Select **Analytics** → **Reports** from the top navigation menu.![image alt text](images/lab-5/image_0.png)
 
 ### Creating a Custom Report
 
-* Click **+ Custom Report**.![image alt text](images/lab-9/image_1.png)
+* Click **+ Custom Report**.![image alt text](images/lab-5/image_1.png)
 
-* Enter the **Report Name** and **Report Description**.![image alt text](images/lab-9/image_2.png)
+* Enter the **Report Name** and **Report Description**.![image alt text](images/lab-5/image_2.png)
 
-* Select a chart type, **Column**. This is the style of chart that will be used to present your custom analytic data.![image alt text](images/lab-9/image_3.png)
+* Select a chart type, **Column**. This is the style of chart that will be used to present your custom analytic data.![image alt text](images/lab-5/image_3.png)
 
-* In the Metrics sections, choose the metric that you wish to analyze. Select **Traffic** as the metric. See [Custom Metrics ](https://docs.google.com/document/d/1T33fq5q5D6z7nmxI7gcKtcIcNvOxbuIv_BO8DWWthis/edit#heading=h.ksg236njnyhd)for a description of each metric.![image alt text](images/lab-9/image_4.png)
+* In the Metrics sections, choose the metric that you wish to analyze. Select **Traffic** as the metric. See [Custom Metrics ](https://docs.google.com/document/d/1T33fq5q5D6z7nmxI7gcKtcIcNvOxbuIv_BO8DWWthis/edit#heading=h.ksg236njnyhd)for a description of each metric.![image alt text](images/lab-5/image_4.png)
 
 * Select an **Aggregate Function** that you want applied to the data for the first metric. You can select an aggregation function to display the **Sum**, **Average**, **Min**, or **Max** values. Select **Sum** as the Aggregate Function.
 
-* (Optional) Click **+ Metric** to add additional metrics. Select **Total Response Time** as the metric and **Average **as the Aggregate Function.![image alt text](image_5.png)
+* (Optional) Click **+ Metric** to add additional metrics. Select **Total Response Time** as the metric and **Average **as the Aggregate Function.![image alt text](images/lab-5/image_5.png)
 
-* Click on the **Dimension **dropdown and select **Proxy. **Every dimension you add (by clicking **+ Dimension**) constrains the data set used to generate the reports. In effect, you're presenting more and more specific data with each drill down.![image alt text](images/lab-9/image_6.png)
+* Click on the **Dimension **dropdown and select **Proxy. **Every dimension you add (by clicking **+ Dimension**) constrains the data set used to generate the reports. In effect, you're presenting more and more specific data with each drill down.![image alt text](images/lab-5/image_6.png)
 
-* Add an additional **Dimension** for **Request Path.**![image alt text](images/lab-9/image_7.png)
+* Add an additional **Dimension** for **Request Path.**![image alt text](images/lab-5/image_7.png)
 
-* You can further narrow the data displayed by adding filters to your report definition.In the **Filter** section of the page, click **+ Filter Condition**.Select **Proxy** as the entity you want to filter on, select **= **as the **Operator** and set the **Value** to your API Proxy name (e.g. "ap_employees").![image alt text](images/lab-9/image_8.png)
+* You can further narrow the data displayed by adding filters to your report definition.In the **Filter** section of the page, click **+ Filter Condition**.Select **Proxy** as the entity you want to filter on, select **= **as the **Operator** and set the **Value** to your API Proxy name (e.g. "ap_employees").![image alt text](images/lab-5/image_8.png)
 
-* Click on the check button under Actions to save this filter.![image alt text](images/lab-9/image_9.png)
+* Click on the check button under Actions to save this filter.![image alt text](images/lab-5/image_9.png)
 
 * Click **Save**.
 
@@ -84,11 +84,11 @@ Upload the bundle,
 
 Once you have saved the **Custom Report** you can view it immediately. You should see something similar to the following:
 
-![image alt text](images/lab-9/image_10.png)
+![image alt text](images/lab-5/image_10.png)
 
 If no data is returned, verify that the timeframe of the **Custom Report** matches a timeframe where traffic was being sent to the API.
 
-![image alt text](images/lab-9/image_11.png)Also, verify that the appropriate **Environment** has been selected on the top right dropdown.![image alt text](images/lab-9/image_12.png)
+![image alt text](images/lab-5/image_11.png)Also, verify that the appropriate **Environment** has been selected on the top right dropdown.![image alt text](images/lab-5/image_12.png)
 
 ### Drilldown dimensions
 
@@ -96,11 +96,11 @@ You can select from a large number of custom drilldown dimensions. Drilldown dim
 
 To drill down into the custom report you just created, click on the name of your **Proxy** under the **Summary** on the bottom of the report.
 
-![image alt text](images/lab-9/image_13.png)
+![image alt text](images/lab-5/image_13.png)
 
 You should now be able to view a drill-down into the **Request Path** dimension for your **API Proxy**.
 
-![image alt text](images/lab-9/image_14.png)
+![image alt text](images/lab-5/image_14.png)
 
 ### Editing and deleting your reports
 
