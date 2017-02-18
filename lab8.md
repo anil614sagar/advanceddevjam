@@ -57,6 +57,7 @@ Upload the bundle,
 	![image alt text](images/lab-8/image_2.png)
 
 * Now, choose the bundle that you downloaded earlier, rename the proxy in this format **{your_initials}**_oauth_code_grant and click Next and then Build
+
 	![image alt text](images/lab-8/image_3.png)
 
 * Click on the API Proxy name.
@@ -69,7 +70,7 @@ Upload the bundle,
 
 * From the code editor, find the base path entry and update it so that it follows this format
 
-	/v1/{your_initials}/oauth_ac
+	`/v1/{your_initials}/oauth_ac`
 
 	![image alt text](images/lab-8/image_6.png)
 
@@ -77,7 +78,7 @@ Upload the bundle,
 
 	![image alt text](images/lab-8/image_7.png)
 
-* Once the proxy is deployed, select **Publish > API Products **from the side navigation menu
+* Once the proxy is deployed, select **Publish > API Products** from the side navigation menu
 
 	![image alt text](images/lab-8/image_8.png)
 
@@ -114,7 +115,7 @@ Upload the bundle,
 	![image alt text](images/lab-8/image_16.png)
 
 * Click on the policy and in the code editor, paste the code give below
-  ```
+  	```
 	<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 	<OAuthV2 async="false" continueOnError="false" enabled="true" name="OAuth-v20-1">
 	    <DisplayName>OAuth v2.0-1</DisplayName>
@@ -131,19 +132,19 @@ Upload the bundle,
 
 * Click on the policy and in the code editor, paste the code give below
 
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-1">
-<DisplayName>Assign Message-1</DisplayName>
-<Remove>
-   <Headers>
-      <Header name="Authorization"/>
-   </Headers>
-</Remove>
-    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-    <AssignTo createNew="false" transport="http" type="request"/>
-</AssignMessage>
-```
+	```
+	<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+	<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-1">
+	<DisplayName>Assign Message-1</DisplayName>
+	<Remove>
+	   <Headers>
+	      <Header name="Authorization"/>
+	   </Headers>
+	</Remove>
+	    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	    <AssignTo createNew="false" transport="http" type="request"/>
+	</AssignMessage>
+	```
 
 
 **Note**: You’ll have to remove the Authorization header using the Assign Message policy
