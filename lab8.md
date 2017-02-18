@@ -106,8 +106,6 @@ Upload the bundle,
 
 * Click on the **Develop** tab. Select **PreFlow** from the sidebar under **Proxy Endpoints** section
 
-	![image alt text](images/lab-8/image_14.png)
-
 	![image alt text](images/lab-8/image_15.png)
 
 * Click on Add Step and in the dialog, select OAuth v2.0 from the Security section then click the Add button
