@@ -70,7 +70,7 @@ Upload the bundle,
 
 ## Instructions
 
-Part 1 - Response Cache Policy
+###Part 1 - Response Cache Policy
 
 * Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
 
@@ -155,7 +155,7 @@ Part 1 - Response Cache Policy
 
 * Well done!  You’ve added a general purpose cache which will survive for 60 seconds, before repopulating on the next request made after that window.  Responses generated from cache spare your backend from serving those requests -- and are returned to clients far quicker than would non-cached responses.
 
-Part 2 - Populate Cache, Lookup Cache
+###Part 2 - Populate Cache, Lookup Cache
 
 You’ve improved the performance of your API with some clever caching of employee information.  Let’s take things a step further.  There may be times when saving a bit of metadata (unrelated to response payload) to cache can be useful.  In this section of the lab, we’ll capture the path -- which includes employee ID -- as specific employee records are requested.  Then, we’ll show how to retrieve this cached path info with a simple Lookup Cache policy.
 
