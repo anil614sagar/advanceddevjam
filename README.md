@@ -3,12 +3,12 @@ Welcome to the Apigee Edge advanced hands on DevJam workshop.
 
 # Getting Started
 
-In this workshop, you will get first hand exposure to Apigee Edge, the full featured enterprise API Management platform. To get started with Apigee Edge, you will need to get access to an Apigee instance. 
+In this workshop, you will get first-hand exposure to Apigee Edge, the full-featured enterprise API Management platform. To get started with Apigee Edge, you will need to get access to an Apigee instance. 
 
 
   If you're new to Apigee, visit this page to create an account: <a href="https://apigee.com/edge" target="_blank">https://apigee.com/edge</a>.
   
-  If you already have Apigee Edge account on cloud, You can skip create account part.
+  If you already have Apigee Edge account on cloud, You can skip creating account part.
 
   You will be presented with a sign in form as shown here:
   

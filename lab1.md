@@ -4,9 +4,9 @@
 
 ## Objectives
 
-In this lab you will get familiar with the Apigee Edge Platform concept of API Proxy Flows. It's one of our developer favorite & most important functionality in Apigee Edge. Apigee Flows feature gives you flexibility to innovate with your API Design, Development & Control API Runtime flow.
+In this lab, You will get familiar with the Apigee Edge Platform concept of API Proxy Flows. It's one of our developer favorite & most important functionality in Apigee Edge. Apigee Flows feature gives you the flexibility to innovate with your API Design, Development & Control API Runtime flow.
 
-In this lab we will see how to create a proxy, Add API resources (Conditional Flows), Add some policies that will be applicable to all the API resources inside the API Proxy, Add some polcies specific to certain endpoints, Reuse policies.
+In this lab, We will see how to create a proxy, Add API resources (Conditional Flows), Add some policies that will be applicable to all the API resources inside the API Proxy, Add some policies specific to certain endpoints, Reuse policies.
 
 ## Prerequisites
 
@@ -81,9 +81,9 @@ We now got a new requirement from business team & more details related to target
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees/** should return details in JSON.
 
   
-## Let's do it !
+## Let's do it!
 
-Add a conditional flow that get's executed when proxy path suffix matches '/{employeeId}' & http method is GET.
+Add a conditional flow that gets executed when proxy path suffix matches '/{employeeId}' & HTTP method is GET.
 
 **Step 1**: Click on proxy you have created earlier, Click on Develop tab.
 
@@ -113,22 +113,22 @@ Tip: See image below
 
 **Step 2**: Call to API , **https://{ORG}-test.apigee.net/v1/{YOUR_INITIALS}-employees** should give response in JSON.
 
-Congratualtions !! You have completed your first task & satisified your business team with great API Management skills.
+Congratualtions !! You have completed your first task & satisfied your business team with great API Management skills.
 
 ## Part 2. Introduction to preflow & postflow :
 
-Great, You are on your way to become an API Ninja. Your business team is ready to sharpen your API Management skills with a new requirement.
+Great, You are on your way to becoming an API Ninja. Your business team is ready to sharpen your API Management skills with a new requirement.
 
-### Business Team Requirements :
+### Business Team Requirements:
 
 - Secure all API calls to customers API using API Key security protection mechanism.
 
-### Success Criteria :
+### Success Criteria:
 
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees/{employeeId}* should return 403 with an error
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return 403 with an error
 
-## Let's do it !
+## Let's do it!
 
 As you know preflow executes before conditional flow & post flow exectutes after conditional flow no matter what. It's more or less like below programming logic,
 
@@ -155,9 +155,9 @@ if (http_verb == 'GET' & path == '/{customerId}/loans') {
 ```  
 
 
-Before we start, We have a question from API Team Leader, Can you answer it ?
+Before we start, We have a question from API Team Leader, Can you answer it?
 
-**Q : Where will you add "verifyApiKeyPolicy" to secure Customer related APIs ?**
+**Q: Where will you add "verifyApiKeyPolicy" to secure Customer related APIs ?**
 
 * A) All conditional flows
 * B) PostFlow
@@ -168,30 +168,30 @@ Before we start, We have a question from API Team Leader, Can you answer it ?
 
 Let's implement the solution,
 
-Step 1 : Click on PreFlow in API Proxy, Add 'verifyApiKey' policy to request flow.
+Step1 : Click on PreFlow in API Proxy, Add 'verifyApiKey' policy to request flow.
 
     
   ![Image](images/add-verify-policy.png)  
 
-Step 2 : Save the updated proxy.
+Step 2: Save the updated proxy.
 
   ![Image](images/save-api.png)  
 
-## Time to verify !
+## Time to verify!
 
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees/{employeeId}** should return 403 with an error message
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return 403 with an error message
 
-Congratualtions !! You have completed your second task & understood how flows concept works in Apigee Edge.
+Congratulations !! You have completed your second task & understood how flows concept works on Apigee Edge.
 
 
 # For Extra Credit
 
-### Business Team Requirements :
+### Business Team Requirements:
 
-- Allow access to GET /employees , GET /employees/{employeeId} endpoints, disallow access to all other endpoints like POST, PUT, DELETE methods
+- Allow access to GET /employees, GET /employees/{employeeId} endpoints, disallow access to all other endpoints like POST, PUT, DELETE methods
 
-- For other resources except allowed one, Respond with a custom error message saying no resource found.
+- For other resources except for allowed one, Respond with a custom error message saying no resource found.
 
 Tip : See the solution [here](https://community.apigee.com/articles/4744/handling-invalid-resource-paths-using-a-default-re.html) & implement same for above customers proxy.  
 
