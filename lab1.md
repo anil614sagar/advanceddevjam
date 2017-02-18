@@ -34,57 +34,60 @@ The following figure shows a basic request and response exchange between an app 
   
 ## Part 1. Getting started with a proxy
   
-  API Team got a requirement from business team to expose legacy "Customers API" with a new rest design & additional API features like security which will become APP developer friendly and eventually increase the consumption of backend services.
+  API Team got a requirement from business team to expose legacy "Employees API" with a new rest design & additional API features like security which will become APP developer friendly and eventually increase the consumption of backend services.
   
 ### Given Information :
   
-  Backend URL : https://apibaas-trial.apigee.net/asagar/macquarie-demo01/customers
-
+  Backend URL : https://cosafinity-prod.apigee.net/v1/employees
   
 ### Action Items :
 
- - Create a reverse pass through proxy with a name **{your_initials}\_customers\_proxy\_v1**
- - Base Path should be **/v1/{your_initials}-customers**
+ - Create a reverse pass through proxy with a name **{your_initials}\_employees     
+ - Base Path should be **/v1/{your_initials}-employees**
  - Deploy to test environment
 
 ### Success Criteria :
   
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers** should return list of customers.
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of customers.
 
-## Let's do it ! 
+## Part 2. Save the proxy
 
-- Create a proxy in Apigee Edge UI. Navigate to APIs -> API Proxies
-- Click on Create New Proxy button on top right sidebar.
-- Use above information & experience you have gained from Apigee Edge DevJam Prerequisites labs that you have done prior to this DevJam.
-- Have a question / questions ? Apigee Team is happy to help you. Please ask for help.
+Let's save the proxy to reuse same in other labs.
 
-## Part 2. Introduction to conditional flows
+**Step 1** : Click on Project
 
-We now got a new requirement from business team & more details related to target customer API from backend team. 
+**Step 2** : Click on Download Revision
+
+![Image](images/download-revision.png)
+
+
+## Part 3. Introduction to conditional flows
+
+We now got a new requirement from business team & more details related to target employee API from backend team.
 
 ### Given Information :
 
-- Customers API supports GET, POST, PUT, DELETE methods which will allow developers to Retrieve, Create, Update, Delete customers entities. 
-- It also has an API to retrieve individual customer loan details using **https://apibaas-trial.apigee.net/asagar/macquarie-demo01/customers/{customerUUID}/loans** endpoint.
+- Employee API supports GET, POST, PUT, DELETE methods which will allow developers to Retrieve, Create, Update, Delete Employee entities. 
+- It also has an API to retrieve individual employee details using **https://apibaas-trial.apigee.net/asagar/macquarie-demo01/employees/{employeeId}** endpoint.
 
 ### Business Team Requirements :
 
-- API Response of GET Individual customer loan details should be of XML format instead of JSON.
-- API Response of other endpoints like get all customer details, get customer details, create customer, update customer, delete customer should be JSON as it is sent by the target server.
+- API Response of GET Individual Employee details should be of XML format instead of JSON.
+- API Response of other endpoints like get all employee details, create employee, update employee, delete employee should be JSON as it is sent by the target server.
 
 ### Success Criteria :
   
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}/loans** should return details in XML.
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/** should return details in JSON.
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees/{employeeId}** should return details in XML.
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees/** should return details in JSON.
 
   
 ## Let's do it !
 
-Add a conditional flow that get's executed when proxy path suffix matches '/{customerId}/loans' & http method is GET.
+Add a conditional flow that get's executed when proxy path suffix matches '/{employeeId}' & http method is GET.
 
 **Step 1**: Click on proxy you have created earlier, Click on Develop tab.
 
-  ![Image](images/threat-develop-click.png)
+  ![Image](images/api-develop-click.png)
   
 **Step 2** : Click on + icon next to Proxy EndPoints -> Defaults to add a conditonal flow to proxy endpoint.
 
@@ -94,11 +97,11 @@ Add a conditional flow that get's executed when proxy path suffix matches '/{cus
 
 Tip: See image below
 
-  ![Image](images/add-conditional-flow-details.png)  
+  ![Image](images/add-conditional-flow2.png)  
 
 **Step 4** : Click on the conditional flow you have created, Add JSON-TO-XML policy to response flow.
 
-  ![Image](images/add-policy-to-response.png)
+  ![Image](images/flow-add-policy.png)
     
   ![Image](images/add-policy-json-xml.png)  
 
@@ -106,11 +109,9 @@ Tip: See image below
 
 ## Time to verify !
 
-**Step 1**: Call to API , **https://{ORG}-test.apigee.net/v1/{YOUR_INITIALS}-customers/2315a37b-f4b4-11e6-8477-122e0737977d/loans** should give response in XML.
+**Step 1**: Call to API , **https://{ORG}-test.apigee.net/v1/{YOUR_INITIALS}-employees/05d3c8cd-ee18-11e6-b5a4-122e0737977d** should give response in XML.
 
-**Step 2**: Call to API , **https://{ORG}-test.apigee.net/v1/{YOUR_INITIALS}-customers/2315a37b-f4b4-11e6-8477-122e0737977d** should give response in JSON.
-
-**Step 3**: Call to API , **https://{ORG}-test.apigee.net/v1/{YOUR_INITIALS}-customers** should give response in JSON.
+**Step 2**: Call to API , **https://{ORG}-test.apigee.net/v1/{YOUR_INITIALS}-employees** should give response in JSON.
 
 Congratualtions !! You have completed your first task & satisified your business team with great API Management skills.
 
@@ -124,9 +125,8 @@ Great, You are on your way to become an API Ninja. Your business team is ready t
 
 ### Success Criteria :
 
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}/loans** should return 403 with an error
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}** should return 403 with an error
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}** should return 403 with an error  
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees/{employeeId}* should return 403 with an error
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return 403 with an error
 
 ## Let's do it !
 
@@ -179,9 +179,8 @@ Step 2 : Save the updated proxy.
 
 ## Time to verify !
 
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}/loans** should return 403 with an error message
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}** should return 403 with an error message
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}** should return 403 with an error message
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees/{employeeId}** should return 403 with an error message
+  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return 403 with an error message
 
 Congratualtions !! You have completed your second task & understood how flows concept works in Apigee Edge.
 
@@ -190,7 +189,7 @@ Congratualtions !! You have completed your second task & understood how flows co
 
 ### Business Team Requirements :
 
-- Allow access to GET /customers , GET /customers/{customerId}/loans endpoints, disallow access to all other endpoints like POST, PUT, DELETE, GET /customers/{customerId}
+- Allow access to GET /employees , GET /employees/{employeeId} endpoints, disallow access to all other endpoints like POST, PUT, DELETE methods
 
 - For other resources except allowed one, Respond with a custom error message saying no resource found.
 
@@ -198,9 +197,8 @@ Tip : See the solution [here](https://community.apigee.com/articles/4744/handlin
 
 ## Time to verify Extra Credit task!
 
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}/loans** should return 403 with an error message saying API key required.
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/** should return 403 with an error message saying API key required.
-  - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-customers/{customerUUID}** should return 404 not found with an error message saying resource not found.
+  - API Call to POST **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return 404 resource not found.
+
 
 
 ## Summary
