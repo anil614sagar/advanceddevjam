@@ -71,14 +71,7 @@ Upload the bundle,
   
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
 
-### Let's do it ! 
-
-- Create a proxy in Apigee Edge UI. Navigate to APIs -> API Proxies
-- Click on Create New Proxy button on top right sidebar.
-- Use above information & experience you have gained from Apigee Edge DevJam Prerequisites labs that you have done prior to this DevJam.
-- Have a question / questions ? Apigee Team is happy to help you. Please ask for help.
-
-## Select existing Employees API
+## Lets get started!
 
 
 **Step 1**. Click on the Develop tab, Let's Use an Assign Message Policy to prepare the service callout request to google maps API.
