@@ -11,7 +11,7 @@ You have a set of APIs that are either consumed by partners or open to public. Y
 
 Policies like XML/JSON threat protection and Regular Expression protection in Apigee Edge, help you easily protect your backend and minimize attacks on your API against these threats by addressing the vulnerabilities.
 
-For example, the XML Threat Protection policy screens against XML threats by validating messages against an XML schema (.xsd), evaluating message content for specific blacklisted keywords or patterns and detecting corrupt or malformed messages before those messages are parsed. And, the JSON Threat Protection policy minimizes the risk posed by content-level attacks by enabling you to specify limits on various JSON structures, such as arrays and strings.
+For example, the JSON Threat Protection policy minimizes the risk posed by content-level attacks by enabling you to specify limits on various JSON structures, such as arrays and strings.
 
 ## Pre-requisites
   - Apigee Edge Account
@@ -135,7 +135,73 @@ Let's make a call with payload size less than or equal to 5 & see the success re
 
   ![Image](images/threat-success.png) 
 
-I
+Congratualations ! We have successfully implemented threat protection against payload related attacks & delivered the solution to the bussiness team. Let's quickly protect our API from SQL injections attacks in the request URI.
+
+
+
+
+**Step 12** : Now, let’s protect your backend from SQL Injection threats. For this, we will be using the Regular Expression Protection policy.	
+
+In the Create Custoemr Request flow, click the Add Step button and from the Security section, add the policy named Regular Expression Protection.
+
+  ![Image](images/threat-regex-add.png) 
+
+Select the policy, Click Add.  
+  
+  ![Image](images/thread-regex-add.png) 
+
+	
+**Step 13** : Click on the Policy in PreFlow and clear the boilerplate code and paste the code below in the code editor
+
+```	
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RegularExpressionProtection async="false" continueOnError="false" enabled="true" name="Regular-Expression-Protection-1">
+    <DisplayName>Regular Expression Protection-1</DisplayName>
+<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <Variable name="request.uri">    <Pattern>[\s]*((delete)|(exec)|(drop\s*table)|(insert)|(shutdown)|(update)|(or))</Pattern>
+    </Variable>
+</RegularExpressionProtection>
+```
+
+![Image](images/threat-regex-proxy-code.png) 
+
+- Notice elemenet \<Variable name="request.uri"\> where URI is protected against SQL injection attacks
+
+
+Save the proxy and make sure it's deployed to test environment.
+
+**Step 14** :
+
+Add a query param to your URL with a SQL command like this ?query=delete * from table and hit send.
+
+ Navigate to https://apigee-rest-client.appspot-preview.com/ , Add header 'Content-Type' : 'application/json'
+
+  ![Image](images/threat-add-headers.png) 
+
+Update the queryparam ?query=delete * from table & make the API call,
+
+  ![Image](images/regex-success.png)
+
+Congratualations ! We have successfully implemented threat protection against SQL related attacks & delivered the solution to the bussiness team.
+
+
+##Earn Extra-points
+
+Now that you know how to protect your APIs from JSON threats and SQL Injection threats, try to protect the API from other JSON threats by going through the JSON threat protection policy various attributes.
+
+- Restrict the maximum number of elements allowed in an JSON payload array as 4.
+- Restrict the maximum allowed containment depth as 2, where the containers are objects or arrays. For example, an array containing an object which contains an object would result in a containment depth of 3.
+- Restrict the maximum string length allowed for a property name within an object as 40.
+- Restrict the maximum length allowed for a string value as 200.
+
+
+##Quiz
+- How do you protect your backend from Cross Site Tracing (XST) attacks? 
+- Can you use JSON Threat protection policy to detect empty payloads? If yes, how? If no, why?
+- Which policy would you use to protect your backend from SQL Injection threats?
+
+##Summary
+In this lab you learned how to protect your backend from SQL Injection and JSON threats by using various policies like Regular Expression protection and JSON threat protection in Apigee Edge.
 
 
 
