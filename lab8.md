@@ -42,7 +42,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 	![image alt text](images/lab-8/image_0.png)
 
-* Download the api proxy bundle from [here](https://drive.google.com/open?id=0B-U60FIlIY3JdTVkNWlFLVIxb2s)
+* Download the api proxy bundle from [here](assets/xx_oauth_code_grant.zip)
 
 * Click the **+ API Proxy** button
 
