@@ -13,8 +13,6 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 ## Pre-requisites
 
-* You have an OAuth API proxy in Apigee Edge. If not, jump back to "API Development - Create a Reverse Proxy" lab.
-
 * You have the following created on Apigee Edge - an API Product, a Developer and an App. If not, jump back to "API Publishing - Packaging APIs" lab.
 
   
