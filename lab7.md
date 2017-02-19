@@ -14,26 +14,20 @@ Most typically, the client_credentials grant type is used when the app is also t
 ## Pre-requisites
 
 * You have an OAuth API proxy in Apigee Edge. This API proxy is created by default when you provision an Edge instance on Cloud. If this does not exist, let your instructor know.
-
-* You have an API Proxy that is not currently secured.  If you do not have an API Proxy available for this lab, revisit the lab "API Development - Create a Reverse Proxy".
-
-* You have the following created on Apigee Edge - an API Product, a Developer and an App. If not, jump back to "API Publishing - Packaging APIs" lab.
-
   
 ### Let's prepare the proxy for the lab :
 
  - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
 
- 
-![](./images/upload-revision.png)
+  ![](./images/upload-revision.png)
 
-Upload the bundle,
+ - Upload the bundle,
 
-![](./images/upload-bundle.png)
+  ![](./images/upload-bundle.png)
 
  - Deploy to test environment
 
- ![](./images/deploy-to-test.png)
+  ![](./images/deploy-to-test.png)
 
 ### Success Criteria :
   
@@ -48,7 +42,7 @@ Upload the bundle,
 
 	![image alt text](images/lab-7/image_0.png)
 
-* Click on the API proxy that you created in "API Development - Create a Reverse Proxy" lab.
+* Click on the API proxy that you created in pre requisites step.
 
 * Click on the **Develop** tab. Select **PreFlow** from the sidebar under **Proxy Endpoints** section.
 
@@ -106,25 +100,13 @@ Upload the bundle,
 
 * *Congratulations!* You’ve now successfully secured your APIs with OAuth 2.0
 
-* Now, let’s test it. To do that, we’d have to obtain the consumer key and secret for a particular app that is associated with a API Product containing the APIs that we created.
+* Before we proceed to test, create an API Product with these 2 proxies and also create a Developer and an App with the API Product and the Developer that you just created. 
 
-* Click **Publish > Apps** from the top navigation menu
+* Copy the consumer key and the secret for your app and generate the base64 encoded value of `consumer_key:consumer_secret`
+	
+	Mac and Linux users, open Terminal and type the following command
 
-	![image alt text](images/lab-7/image_6.png)
-
-* Select the app that you created in the Publishing APIs lab
-
-	![image alt text](images/lab-7/image_7.png)
-
-* Click on the show button under Consumer Key, Consumer Secret.
-
-* Copy the values and store them somewhere safe
-
-	![image alt text](images/lab-7/image_8.png)
-
-* Mac and Linux users, open Terminal and type the following command
-
-	echo <consumer_key>:<consumer_secret> | base64
+	`echo <consumer_key>:<consumer_secret> | base64`
 
 	or, refer this [link](https://www.base64encode.org/) to generate the value
 
@@ -134,9 +116,10 @@ Upload the bundle,
 
 	![image alt text](images/lab-7/image_9.png)
 
-* First, you’ll obtain an access token which will be used while fetching the employees list. To obtain an access token, you’ll have to call the /oauth/client_credential/accesstoken endpoint with a client credentials grant type as a query param and an Authorization header which is the base64 encoded value of consumer key and secret pair that was obtained previously.
+* First, you’ll obtain an access token which will be used while fetching the employees list. To obtain an access token, you’ll have to call the **/oauth/client_credential/accesstoken** endpoint with a client credentials grant type as a query param and an Authorization header which is the base64 encoded value of consumer key and secret pair that was obtained previously.
 
-	Query param: grant_type=cilent_credentials	Header: Authorization: Basic <base64 encoded value>
+	Query param: grant_type=cilent_credentials
+	Header: Authorization: Basic <base64 encoded value>
 
 	![image alt text](images/lab-7/image_10.png)
 
