@@ -141,33 +141,19 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 	```
 
 
-**Note**: You’ll have to remove the Authorization header using the Assign Message policy because, the header might create some conflict in the target backend.
+	**Note**: You’ll have to remove the Authorization header using the Assign Message policy because, the header might create some conflict in the target backend.
 
 * **Save** the proxy and deploy it on the **test** environment
 
 	![image alt text](images/lab-8/image_18.png)
+	
+* *Congratulations!* You’ve now successfully secured your APIs with OAuth 2.0
 
-* Make sure that you have added these two proxy bundles in your API Product.
+* Before we proceed to test, create an API Product with these 2 proxies and also create a Developer and an App with the API Product and the Developer that you just created. 
 
-* *Congratulations!*...You’ve now successfully secured your APIs with OAuth 2.0
-
-* Now, let’s test it. To do that, we’d have to obtain the consumer key and secret for a particular app that is associated with a API Product containing the APIs that we created.
-
-* Click **Publish** > **Developer Apps** from the side navigation menu
-
-	![image alt text](images/lab-8/image_19.png)
-
-* Select the app that you created in the Publishing APIs lab
-
-	![image alt text](images/lab-8/image_20.png)
-
-* Click on the show button under Consumer Key, Consumer Secret.
-
-* Copy the values and store them somewhere safe
-
-	![image alt text](images/lab-8/image_21.png)
-
-* Mac and Linux users, open Terminal and type the following command
+* Copy the consumer key and the secret for your app and generate the base64 encoded value of `consumer_key:consumer_secret`
+	
+	Mac and Linux users, open Terminal and type the following command
 
 	`echo <consumer_key>:<consumer_secret> | base64`
 
@@ -176,6 +162,8 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 * Copy the URL for oauth API proxy.
 
 	![image alt text](images/lab-8/image_22.png)
+
+* Now, let’s test it. 
 
 * First, you’ll obtain an auth code which will be exchanged to obtain the access token. To obtain an auth code, you’ll have to call the **/authorize** endpoint with your app’s client id, a code response type and required scopes as query params
 
