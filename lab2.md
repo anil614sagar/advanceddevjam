@@ -31,7 +31,7 @@ For the service callout to convert the zipcode to the geocoordinate, you will us
 
 ##How can Apigee Edge help?
 
-Apigee Edge enables you to design API behavior by using the out of the box policie'. A policy is like a module that implements a specific, limited management function. Policies are designed to let you add common types of management capabilities to an API easily and reliably.
+Apigee Edge enables you to design API behavior by using the out of the box policies'. A policy is a module that implements a specific, limited management function. Policies are designed to let you add common types of management capabilities to an API easily and reliably.
 
 In this lab we will see how you can extend an existing API by aggregating it with another API and creating a single interface for your App Developers to consume. In this example, we will be combining data from our Employee API with the Google Weather to have a single response of the employee information and weather for their location. We will discover and use the following types of policies:
 
@@ -71,14 +71,7 @@ Upload the bundle,
   
   - API Call to **https://{ORNAME}-test.apigee.net/v1/{your_initials}-employees** should return list of employees.
 
-### Let's do it ! 
-
-- Create a proxy in Apigee Edge UI. Navigate to APIs -> API Proxies
-- Click on Create New Proxy button on top right sidebar.
-- Use above information & experience you have gained from Apigee Edge DevJam Prerequisites labs that you have done prior to this DevJam.
-- Have a question / questions ? Apigee Team is happy to help you. Please ask for help.
-
-## Select existing Employees API
+## Lets get started!
 
 
 **Step 1**. Click on the Develop tab, Let's Use an Assign Message Policy to prepare the service callout request to google maps API.
@@ -332,7 +325,7 @@ You should may have noticed at the end of the lab, if you did not include the ra
 2. In this lab, we used the Javascript policy to set variables used in the request to the backend. What other policy could we use to achieve the same result?
 
 ## Summary
-That completes the policy oriented approach to build composite APIs. You learned how to use a variety of transformation and extensibility policies to a proxy to create an API facade that has a more consumable interface than the raw backend target endpoint interface. You also learned how to call external services within the flow using the Service Callout extensibility policy and to use the results to augment the request to the target endpoint. You also learned how to quickly incorporate Javascript code to transform and manipulate data before sending it to the API consumer. Alternatively you can achieve this by using programmability feature of Apigee Edge to implement this functionality. We will see that in the next section.
+That completes the policy oriented approach to building composite APIs. You learned how to use a variety of transformation and extensibility policies to a proxy to create an API facade that has a more consumable interface than the raw backend target endpoint interface. You also learned how to call external services within the flow using the Service Callout extensibility policy and to use the results to augment the request to the target endpoint. You also learned how to quickly incorporate Javascript code to transform and manipulate data before sending it to the API consumer. Alternatively, You can achieve this by using programmability feature of Apigee Edge to implement this functionality. We will see that in the next section.
 
 Common themes and use cases, are best handled with standard implementations and configuration. Apigee Edge provides Traffic Management, Security, Mediation and other policies out of the box that you can leverage, configure, and reuse across projects. These policies provide common, consistent, scalable, tuned implementations of common functionality. However complex problems are best handled via software development, or a combination of configuration and development. Apigee Edge enables you to solve these complex or unique needs through extension policies. You can write these extension policies in JavaScript, Java, node.js, or external services. In addition, with our micro-services architecture, you can implement a set small, independent, decoupled, focused processes with node.js and deploy them in the gateway to meet your unique needs.
 

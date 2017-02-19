@@ -3,12 +3,12 @@ Welcome to the Apigee Edge advanced hands on DevJam workshop.
 
 # Getting Started
 
-In this workshop, you will get first hand exposure to Apigee Edge, the full featured enterprise API Management platform. To get started with Apigee Edge, you will need to get access to an Apigee instance. 
+In this workshop, you will get first-hand exposure to Apigee Edge, the full-featured enterprise API Management platform. To get started with Apigee Edge, you will need to get access to an Apigee instance. 
 
 
   If you're new to Apigee, visit this page to create an account: <a href="https://apigee.com/edge" target="_blank">https://apigee.com/edge</a>.
   
-  If you already have Apigee Edge account on cloud, You can skip create account part.
+  If you already have Apigee Edge account on cloud, You can skip creating account part.
 
   You will be presented with a sign in form as shown here:
   
@@ -54,7 +54,7 @@ Click on "SWITCH TO CLASSIC" link on side navigator bar to switch to classic Edg
 2. [API Development : Create a Mashup with APIs (Composite APIs) ](lab2.md)
 3. [API Security : Threat Protection](lab3.md)
 4. [API Performance: Caching - Populate, Lookup](lab4.md)
-5. [Analytics - Create Custom Reports](lab9.md)
+5. [Analytics - Create Custom Reports](lab5.md)
 6. [OAuth - Client Credentials](lab7.md)
 7. [OAuth - 3 Legged - Authorization Code](lab8.md)
 

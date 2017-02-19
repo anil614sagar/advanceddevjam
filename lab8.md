@@ -13,25 +13,21 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 ## Pre-requisites
 
-* You have an OAuth API proxy in Apigee Edge. If not, jump back to "API Development - Create a Reverse Proxy" lab.
-
-* You have the following created on Apigee Edge - an API Product, a Developer and an App. If not, jump back to "API Publishing - Packaging APIs" lab.
-
+* You have the following created on Apigee Edge - an API Product, a Developer and an App.
   
 ### Let's prepare the proxy for the lab :
 
  - Let's update the proxy with the downloaded proxy bundle in lab1. Create a new revision & upload the bundle.
 
- 
-![](./images/upload-revision.png)
+  ![](./images/upload-revision.png)
 
-Upload the bundle,
+ - Upload the bundle,
 
-![](./images/upload-bundle.png)
+  ![](./images/upload-bundle.png)
 
  - Deploy to test environment
 
- ![](./images/deploy-to-test.png)
+  ![](./images/deploy-to-test.png)
 
 ### Success Criteria :
   
@@ -145,13 +141,13 @@ Upload the bundle,
 	```
 
 
-**Note**: You’ll have to remove the Authorization header using the Assign Message policy
-
-because, the header might create some conflict in the target backend.
+**Note**: You’ll have to remove the Authorization header using the Assign Message policy because, the header might create some conflict in the target backend.
 
 * **Save** the proxy and deploy it on the **test** environment
 
 	![image alt text](images/lab-8/image_18.png)
+
+* Make sure that you have added these two proxy bundles in your API Product.
 
 * *Congratulations!*...You’ve now successfully secured your APIs with OAuth 2.0
 
@@ -173,9 +169,9 @@ because, the header might create some conflict in the target backend.
 
 * Mac and Linux users, open Terminal and type the following command
 
-	echo <consumer_key>:<consumer_secret> | base64
+	`echo <consumer_key>:<consumer_secret> | base64`
 
-	Windows users, refer this [link](https://support.microsoft.com/en-us/kb/191239)
+	Windows and Chromebook users, refer this [link](https://www.base64encode.org/)
 
 * Copy the URL for oauth API proxy.
 

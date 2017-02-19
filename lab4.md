@@ -10,7 +10,7 @@ You just launched your app -- and it’s a hit!  One of your backend services is
 
 Apigee Edge provides caching for runtime persistence of data across requests.  You may access the cache with policies (see chart below).  Apigee Edge supports different caching policies enabling you to:
 
-* Reduce latency: A request satisfied from the cache gets the representation and displays it in a shorter time. The server is more responsive with requests satisfied from the cache, which is closer to the client than the origin server.
+* Reduce latency: A request satisfied from the cache gets the representation and displays it in a shorter time. The server is more responsive to requests satisfied from the cache, which is closer to the client than the origin server.
 * Reduce network traffic: Representations are reused, reducing the impact of processing duplicate or redundant requests. Using a cache also reduces the amount of bandwidth you use.
 * Persist data across transactions: You can store session data for reuse across HTTP transactions.
 * Support security:You may need "scope" access to the contents of a cache so it can only be accessed in a particular environment or by a specific API proxy.
@@ -70,7 +70,7 @@ Upload the bundle,
 
 ## Instructions
 
-Part 1 - Response Cache Policy
+###Part 1 - Response Cache Policy
 
 * Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
 
@@ -127,8 +127,8 @@ Part 1 - Response Cache Policy
 
  **A Quick Note on Cache Expiry, Resources**
 
-  The expiry settings are quite flexible. You could, for example, set the expiry to a particular time of day - say 3:00am Pacific time each day. This allows you to hold a cache all day, and refresh it at the beginning of each day, for example. For more information, see [the cache documentation](http://apigee.com/docs/api-services/reference/response-cache-policy).
-  Apigee Edge provides a default cache resource that can be used for quick testing, which is what is being used in this lesson. Cache policies like ResponseCache can also used named cache resources. A Named cache resource can be manipulated administratively, outside of policy control. For examine, if you would like to clear a cache administratively, you can do that with a named cache resource. It takes just a moment. For more information on Cache Resources, see [Manage Caches for an Environment](http://apigee.com/docs/api-services/content/manage-caches-environment).
+  The expiry settings are quite flexible. You could, for example, set the expiry to a particular time of day - say 3:00 am Pacific time each day. This allows you to hold a cache all day, and refresh it at the beginning of each day, for example. For more information, see [the cache documentation](http://apigee.com/docs/api-services/reference/response-cache-policy).
+  Apigee Edge provides a default cache resource that can be used for quick testing, which is what is being used in this lesson. Cache policies like ResponseCache can also use named cache resources. A Named cache resource can be manipulated administratively, outside of policy control. For examine, if you would like to clear a cache administratively, you can do that with a named cache resource. It takes just a moment. For more information on Cache Resources, see [Manage Caches for an Environment](http://apigee.com/docs/api-services/content/manage-caches-environment).
 
 
 * Click Target Endpoints → default → PostFlow.  Verify your cache policy appears here, as well -- on the Response side.  Then, save your proxy and wait for it to successfully deploy.
@@ -147,7 +147,7 @@ Part 1 - Response Cache Policy
 
     * Response times reduced with cache.
 
-    * Trace graph shows a response generated in the gateway, from cache  eliminating the need to forward these requests to the target backend.
+    * Trace graph shows a response generated in the gateway, from cache eliminating the need to forward these requests to the target backend.
 
 ![image alt text](images/lab-4/image_6.png)
 
@@ -155,7 +155,7 @@ Part 1 - Response Cache Policy
 
 * Well done!  You’ve added a general purpose cache which will survive for 60 seconds, before repopulating on the next request made after that window.  Responses generated from cache spare your backend from serving those requests -- and are returned to clients far quicker than would non-cached responses.
 
-Part 2 - Populate Cache, Lookup Cache
+###Part 2 - Populate Cache, Lookup Cache
 
 You’ve improved the performance of your API with some clever caching of employee information.  Let’s take things a step further.  There may be times when saving a bit of metadata (unrelated to response payload) to cache can be useful.  In this section of the lab, we’ll capture the path -- which includes employee ID -- as specific employee records are requested.  Then, we’ll show how to retrieve this cached path info with a simple Lookup Cache policy.
 
@@ -267,13 +267,13 @@ Keep in mind that all of the administrative actions you can perform in the Edge 
 
 ## Quiz
 
-1. Name two key benefits to using cache.
+1. Name two key benefits of using the cache.
 
 2. Describe the differences between Response Cache and Populate Cache policies.
 
 ## Summary
 
-In this lab, you learned how to apply cache policies to enhance the performance of your API.  Caching is not a silver bullet for all API performance problems.  Fear not!  Apigee Edge analytics are a powerful tool for deciding what to cache, how long, and what performance gains to expect.  Consider giving the analytics lab a try next.
+In this lab, you learned how to apply cache policies to enhance the performance of your API.  Caching is not a silver bullet for all API performance problems.  Fear not!  Apigee Edge analytics is a powerful tool for deciding what to cache, how long, and what performance gains to expect.  Consider giving the analytics lab a try next.
 
 ## References
 

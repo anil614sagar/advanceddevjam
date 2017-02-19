@@ -1,9 +1,9 @@
-#API Security : Threat Protection
+#API Security: Threat Protection
 
 *Duration : 20 mins - Persona : API Team/Security*
 ## Use case
 
-You have a set of APIs that are either consumed by partners or open to public. You want to keep those APIs secure by protecting the backend from SQL Injection and XML threats.
+You have a set of APIs that are either consumed by partners or open to the public. You want to keep those APIs secure by protecting the backend from SQL Injection and XML threats.
 
 ## How can Apigee Edge help?
 
@@ -42,7 +42,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to "Creating an 
 
 	![image alt text](images/lab-3/image_0.png)
 
-* From the list of proxies, Select the api proxy that you want to protect.
+* From the list of proxies, Select the API proxy that you want to protect.
 
 	![image alt text](images/lab-3/image_1.png)
 
@@ -98,7 +98,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to "Creating an 
 
 * *Congratulations!*...Your API is now protected from SQL Injection Attacks.
 
-* Firstly, let’s test XML threat protection using the REST Client ([https://apigee-rest-client.appspot-preview.com/](https://apigee-rest-client.appspot-preview.com/)). Open the REST Client on a new browser window.  
+* Firstly, let’s test XML threat protection using the REST Client ([https://apigee-rest-client.appspot-preview.com/](https://apigee-rest-client.appspot-preview.com/)). Open the REST Client in a new browser window.  
 
 * Copy the URL for your API proxy.
 
