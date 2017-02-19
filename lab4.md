@@ -164,6 +164,8 @@ You’ve improved the performance of your API with some clever caching of employ
 * Change the expiry time on your Response Cache policy to 1s.  This will allow us to make multiple requests for Part II of the lab without triggering a cached response from our Part I work.
 
 	![image alt text](images/lab-4/image_7.png)
+	
+* Add a conditional flow Get an Employee with given UUID similar to lab 1.
 
 * Click Proxy Endpoints → default → Get an Employee with given UUID.
 
@@ -238,6 +240,7 @@ We’ve attached a Lookup Cache policy to the response flow of our route. This p
 
 * Your graph should look something like this, below.  Take note -- you have two new cache policies in effect.  One is populating the cache with the url suffix /{employee-id} -- and the other is looking up that value, by key name, in cache.  You can see proof of this in the assigned variable, employeePathID
 
+	![image alt text](images/cahce-p-l.png)
 
 Congratulations!  You’ve done a few cool things here -- defined a custom key for your new cache, seeded it with some data from the client request, and retrieved that data later in the flow.  On retrieving this data from cache, you’ve assigned it to a flow variable.  In a real life scenario, you could use this flow variable to drive conditional logic, or otherwise take action on the data retrieved from cache.  Nice work!
 
