@@ -129,7 +129,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 	
 * *Congratulations!* You’ve now successfully secured your APIs with OAuth 2.0
 
-* If have already created an API Product, an App and a Developer, just add the **{your_initials}**_oauth_code_grant proxy to your API Product. Otherwise, create an API Product with these 2 proxies and also create a Developer and an App.
+* If have already created an API Product, an App and a Developer, just add the **{your_initials}**_oauth_code_grant proxy and the proxy that you created in the pre requistie step to your API Product. Otherwise, create an API Product with these 2 proxies and also create a Developer and an App.
 
 **Note**: Make sure you use the same API Product and the Developer you created while creating an App
 
