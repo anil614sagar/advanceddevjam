@@ -172,4 +172,4 @@ In this lab you learned how to protect your backend from SQL Injection and XML t
 
 ## Rate this lab
 
-How did you link this lab? Rate [here](https://drive.google.com/open?id=1kLZnmuq1CuQ6OmuaKXfOXwBobmzt0LWO_aEo0yAc0BE).
+How did you link this lab? Rate [here](https://drive.google.com/open?id=1x8B4JvS31f0nHOPLfMUmKzFqQm1VkfL8q5mP-9joxoQ).

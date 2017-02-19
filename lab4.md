@@ -290,4 +290,4 @@ In this lab, you learned how to apply cache policies to enhance the performance 
 
 ## Rate this lab
 
-How did you link this lab? Rate [here](https://docs.google.com/a/google.com/forms/d/1TUk1BCNO75Cli2OzAFNctykuJ9TF6d9uv7HwBYX2S9Q).
+How did you like this lab? Rate [here](https://drive.google.com/open?id=1uNt_p_zb3WP7GTRydy521KEQZl6ErNcOlQaOFimYREY).

@@ -211,3 +211,7 @@ For more details refer,
 - http://docs.apigee.com/api-services/content/flow-configurations
 - http://docs.apigee.com/api-services/content/flow-variables-and-conditions
 - http://docs.apigee.com/api-services/content/uri-based-configurations
+
+## Rate this lab
+
+How did you link this lab? Rate [here](https://drive.google.com/open?id=1jOj_EWdCx1YleaQ5LVHqnrmbdANf54oaTKXHD0SMoI8).

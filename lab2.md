@@ -335,8 +335,6 @@ Useful Apigee documentation links on API Mashups
 
 - http://docs.apigee.com/api-services/reference/service-callout-policy
 
-## Rate this lab
-
-TBD
+`
 
 
