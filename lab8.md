@@ -238,4 +238,4 @@ In this lab you learned how to secure your API using a three legged OAuth, obtai
 
 ## Rate this lab
 
-How did you link this lab? Rate [here](https://drive.google.com/open?id=19YS_51mBsilVeb3FUhEGs8E6GaMhtoKJf7dulp0oUq0).
+How did you link this lab? Rate [here](https://goo.gl/forms/mQODX7zMuCGfBotl1).
