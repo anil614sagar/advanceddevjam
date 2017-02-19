@@ -131,13 +131,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 * Before we proceed to test, create an API Product with these 2 proxies and also create a Developer and an App with the API Product and the Developer that you just created. 
 
-* Copy the consumer key and the secret for your app and generate the base64 encoded value of `consumer_key:consumer_secret`
-	
-	Mac and Linux users, open Terminal and type the following command
-
-	`echo <consumer_key>:<consumer_secret> | base64`
-
-	Windows and Chromebook users, refer this [link](https://www.base64encode.org/)
+* Copy the consumer key and the secret values of your app.
 
 * Copy the URL for oauth API proxy.
 
