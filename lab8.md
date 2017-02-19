@@ -48,7 +48,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 	![image alt text](images/lab-8/image_1.png)
 
-* Select **Proxy Bundle **option and click Next.
+* Select **Proxy Bundle** option and click Next.
 
 	![image alt text](images/lab-8/image_2.png)
 
@@ -70,7 +70,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 	![image alt text](images/lab-8/image_6.png)
 
-* Now Save the proxy and deploy it to test
+* Now Save the proxy and deploy it to test environment
 
 	![image alt text](images/lab-8/image_7.png)
 
@@ -78,7 +78,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 	![image alt text](images/lab-8/image_13.png)
 
-* Click on the API proxy that you created in the pre requisites step.
+* Now, select the API proxy that you created in the pre requisites step.
 
 * Click on the **Develop** tab. Select **PreFlow** from the sidebar under **Proxy Endpoints** section
 
@@ -145,7 +145,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 * Now, let’s test it. 
 
-* First, you’ll obtain an auth code which will be exchanged to obtain the access token. To obtain an auth code, you’ll have to call the **/authorize** endpoint with your app’s client id, a code response type and required scopes as query params
+* First, you’ll obtain an auth code which will be exchanged to obtain the access token. To obtain an auth code, you’ll have to call the **/v1/{your_initials}/oauth_ac/authorize** endpoint with your app’s client id, a code response type and required scopes as query params
 
 	`Query param: response_type=code, client_id=<your app’s client id>,
 	scope=READ,UPDATE`
@@ -173,9 +173,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 * You will be redirected to the callback URL that you provided while creating the app with a query parameter i.e, code.
 
-* To obtain an access token, we need to call the `/token` endpoint with the following
-
-	body information passed in the **x-www-form-url-encoded** format
+* To obtain an access token, we need to call the `/v1/{your_initials}/oauth_ac/token` endpoint with the following body information passed in the **x-www-form-url-encoded** format
 
 	```
 	code : <auth code>
