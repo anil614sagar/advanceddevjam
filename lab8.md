@@ -74,31 +74,11 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 	![image alt text](images/lab-8/image_7.png)
 
-* Once the proxy is deployed, select **Publish > API Products** from the side navigation menu
-
-	![image alt text](images/lab-8/image_8.png)
-
-* Select the API Product that you created as a part of "Publishing APIs" lab.
-
-	![image alt text](images/lab-8/image_9.png)
-
-* Click on Edit
-
-	![image alt text](images/lab-8/image_10.png)
-
-* Now under Resources > API Proxy section, click on Add API Proxy
-
-	![image alt text](images/lab-8/image_11.png)
-
-* Select the API Proxy and click save
-
-	![image alt text](images/lab-8/image_12.png)
-
-* Now. select **APIs** > **API Proxies** in the top navigation menu
+* Select **APIs** > **API Proxies** in the top navigation menu
 
 	![image alt text](images/lab-8/image_13.png)
 
-* Click on the API proxy that you created in "Creating an API proxy" lab.
+* Click on the API proxy that you created in the pre requisites step.
 
 * Click on the **Develop** tab. Select **PreFlow** from the sidebar under **Proxy Endpoints** section
 
