@@ -128,6 +128,16 @@ You have an API proxy created in Apigee Edge. If not, jump back to "Creating an 
 
 	*Note*: The above response shows that the children count exceeded 3 because, the provided XML body had 4 children for the root node whereas we had set a restriction in the policy to 3 - <NodeDepth>3</NodeDepth>
 
+* If you pass the proper XML, you'll see a response like this below, though it says 415 Unsupported Media type, it's assumed that it is the response that you'd get back for this request in this lab.
+	```
+	{
+	  "error": "not_supported",
+	  "timestamp": 1487556596672,
+	  "duration": 0,
+	  "error_description": "HTTP 415 Unsupported Media Type",
+	  "exception": "javax.ws.rs.NotSupportedException"
+	}
+	```
 * Now, let’s test SQL Injection protection. Clear the body and remove the header that we had used for the previous call.
 
 * Add a query param to your URL with a SQL command like this ?query=delete * from table and hit send.
