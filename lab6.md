@@ -120,7 +120,7 @@ Most typically, the client_credentials grant type is used when the app is also t
 
 * First, you’ll obtain an access token which will be used while fetching the employees list. To obtain an access token, you’ll have to call the **/oauth/client_credential/accesstoken** endpoint with a client credentials grant type as a query param and an Authorization header which is the base64 encoded value of consumer key and secret pair that was obtained previously.
 
-	Query param: grant_type=cilent_credentials
+	Query param: grant_type=client_credentials
 	Header: Authorization: Basic <base64 encoded value>
 
 	![image alt text](images/lab-7/image_10.png)
