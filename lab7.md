@@ -133,6 +133,8 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 **Note**: Make sure you use the same API Product and the Developer you created while creating an App
 
+* Goto the app that you created and add `localhost` redirect URI in your app.
+
 * Copy the consumer key and the secret values of your app.
 
 * Copy the URL for oauth API proxy.
