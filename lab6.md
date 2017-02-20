@@ -104,6 +104,8 @@ Most typically, the client_credentials grant type is used when the app is also t
 
 **Note**: Make sure you use the same API Product and the Developer you created while creating an App
 
+* Goto the app that you created and add `localhost` redirect URI in your app.
+
 * Copy the consumer key and the secret for your app and generate the base64 encoded value of `consumer_key:consumer_secret`
 	
 	Mac and Linux users, open Terminal and type the following command
