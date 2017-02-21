@@ -105,7 +105,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to "Creating an 
 
 	![image alt text](images/lab-3/image_8.png)
 
-* Paste the URL, Select **POST **from the dropdown and then add **content-type **header with the value **application/xml**
+* Paste the URL, Select **POST** from the dropdown and then add **content-type** header with the value **application/xml**
 
 	![image alt text](images/lab-3/image_9.png)
 
